@@ -32,6 +32,8 @@ jobs:
                 github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
+Then in your repository you would manually trigger the workflow via the workflow dispatch for it to then create a pull request in your repo with the workflow files you want.
+
 <h2> What arguments can I set? </h2>
 The workflow has four different arguments that can be set, as seen in the above example, you can set:
 
