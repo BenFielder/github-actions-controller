@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.16.0](https://github.com/BenFielder/github-actions-controller/compare/v1.15.0...v1.16.0) (2025-11-07)
+
+
+### Features
+
+* add Information for private key ([5ec2727](https://github.com/BenFielder/github-actions-controller/commit/5ec2727c802f224c2ed7dfe52e1e77525e355b2c))
+* trigger release please ([c410a83](https://github.com/BenFielder/github-actions-controller/commit/c410a8302371d34392669d4b9d662bb8b051105a))
+
 ## [1.15.0](https://github.com/BenFielder/github-actions-controller/compare/v1.14.0...v1.15.0) (2025-11-07)
 
 
