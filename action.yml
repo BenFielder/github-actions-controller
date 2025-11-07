@@ -20,6 +20,12 @@ inputs:
   templates_repo:
     description: "Repository containing workflow templates"
     default: "BenFielder/github-actions-controller"
+  app_id:
+    description: "GitHub App ID"
+    required: true
+  app_private_key:
+    description: "GitHub App Private Key"
+    required: true
 
 runs:
   using: "composite"
@@ -40,8 +46,8 @@ runs:
       id: generate_token
       uses: actions/create-github-app-token@v2.0.2
       with:
-          app_id: ${{ secrets.APP_ID }}
-          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+          app_id: ${{ inputs.app_id }}
+          private_key: ${{ inputs.app_private_key }}
 
     - name: Run controller logic
       run: |
