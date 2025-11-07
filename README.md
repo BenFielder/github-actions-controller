@@ -6,7 +6,7 @@ Think of it like a easy quick way to get setup with basic workflows, and if you 
 
 <h2> How do I get started? </h2>
 
-Simply inside your repository setup a workflow file, similar to the below example.
+To get started in your repository setup a workflow file, similar to the below example.
 
 ```
 name: Github Actions Controller
