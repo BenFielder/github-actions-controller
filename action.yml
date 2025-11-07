@@ -14,8 +14,12 @@ inputs:
   pull_deployment_workflows:
     description: "Workflows for deploying your code"
     default: "false"
-  github_token:
-    description: "The target repo's github token"
+  base_branch:
+    description: "Base branch to create PR against"
+    default: "main"
+  templates_repo:
+    description: "Repository containing workflow templates"
+    default: "BenFielder/github-actions-controller"
 
 runs:
   using: "composite"
@@ -23,23 +27,14 @@ runs:
 
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Set up Git
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
       shell: bash
-
-    - name: Sync secrets
-      uses: jpoehnelt/secrets-sync-action@1.10.0
-      with:
-          GITHUB_TOKEN: ${{ secrets.GH_AC_TOKEN }}
-          SECRETS: |
-            ^APP_ID$
-            ^GITHUB_.*
-            ^APP_PRIVATE_KEY*
-          REPOSITORIES: |
-            ${{github.repository}}
 
     - name: Generate GitHub App Token
       id: generate_token
@@ -48,14 +43,15 @@ runs:
           app_id: ${{ secrets.APP_ID }}
           private_key: ${{ secrets.APP_PRIVATE_KEY }}
 
-
     - name: Run controller logic
       run: |
         bash "${{ github.action_path }}/src/scripts/pull_workflows.sh" \
-          "${{ inputs.testing_workflows }}" \
-          "${{ inputs.linting_workflows }}" \
-          "${{ inputs.build_workflows }}" \
-          "${{ inputs.deployment_workflows }}"
+          "${{ inputs.pull_testing_workflows }}" \
+          "${{ inputs.pull_linting_workflows }}" \
+          "${{ inputs.pull_build_workflows }}" \
+          "${{ inputs.pull_deployment_workflows }}" \
+          "${{ inputs.base_branch }}" \
+          "${{ inputs.templates_repo }}"
       env:
-          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
       shell: bash
