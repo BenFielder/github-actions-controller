@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.0](https://github.com/BenFielder/github-actions-controller/compare/v1.14.0...v1.15.0) (2025-11-07)
+
+
+### Features
+
+* Update version of action to new release number ([1c2c851](https://github.com/BenFielder/github-actions-controller/commit/1c2c851ff9eea596899f08b9fe0479e5cb1953bf))
+
 ## [1.14.0](https://github.com/BenFielder/github-actions-controller/compare/v1.13.0...v1.14.0) (2025-04-23)
 
 
