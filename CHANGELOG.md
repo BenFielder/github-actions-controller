@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.0](https://github.com/BenFielder/github-actions-controller/compare/v1.16.0...v1.17.0) (2025-11-08)
+
+
+### Features
+
+* add debug step into workflow ([8e8857d](https://github.com/BenFielder/github-actions-controller/commit/8e8857d5eb5269ab3e98037a16e2935285b1122e))
+
 ## [1.16.0](https://github.com/BenFielder/github-actions-controller/compare/v1.15.0...v1.16.0) (2025-11-07)
 
 
