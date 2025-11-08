@@ -21,6 +21,12 @@ echo "  - Deployment: $DEPLOYMENT_WORKFLOWS"
 echo "  - Base Branch: $BASE_BRANCH"
 echo "  - Templates:  $TEMPLATES_REPO"
 
+# Check if GITHUB_TOKEN is set
+if [ -z "$GITHUB_TOKEN" ]; then
+  echo "Error: GITHUB_TOKEN environment variable is not set"
+  exit 1
+fi
+
 # Cleanup function
 cleanup() {
   echo "Cleaning up..."
@@ -32,10 +38,12 @@ trap cleanup EXIT
 git config --global user.name "github-actions[bot]"
 git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-# Force Git to use the GitHub Actions token
+# Force Git to use the GitHub App token
+echo "Setting up git authentication..."
 git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}"
 
 # Fetch and checkout base branch
+echo "Fetching base branch: $BASE_BRANCH"
 git fetch origin "$BASE_BRANCH"
 
 # Delete branch if it exists locally or remotely
@@ -146,4 +154,4 @@ else
 Please review the changes before merging."
 fi
 
-echo "✓ Done!"
+echo "Done!"
