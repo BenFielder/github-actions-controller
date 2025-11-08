@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.0](https://github.com/BenFielder/github-actions-controller/compare/v1.18.0...v1.19.0) (2025-11-08)
+
+
+### Features
+
+* set github_repository to the env ([6a3a0ca](https://github.com/BenFielder/github-actions-controller/commit/6a3a0cae84396dc943d0f8090278824015df05dc))
+
 ## [1.18.0](https://github.com/BenFielder/github-actions-controller/compare/v1.17.0...v1.18.0) (2025-11-08)
 
 
