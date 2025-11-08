@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.18.0](https://github.com/BenFielder/github-actions-controller/compare/v1.17.0...v1.18.0) (2025-11-08)
+
+
+### Features
+
+* Check if GH token is set ([ffad713](https://github.com/BenFielder/github-actions-controller/commit/ffad713bfa0de9a07b51b2b52b3443f8d4214ce6))
+
 ## [1.17.0](https://github.com/BenFielder/github-actions-controller/compare/v1.16.0...v1.17.0) (2025-11-08)
 
 
