@@ -42,12 +42,23 @@ runs:
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
       shell: bash
 
+    - name: Debug inputs
+      run: |
+        echo "App ID length: ${#APP_ID}"
+        echo "App ID (first 3 chars): ${APP_ID:0:3}"
+        echo "Private key length: ${#PRIVATE_KEY}"
+        echo "Private key (first 20 chars): ${PRIVATE_KEY:0:20}"
+      shell: bash
+      env:
+        APP_ID: ${{ inputs.app_id }}
+        PRIVATE_KEY: ${{ inputs.app_private_key }}
+
     - name: Generate GitHub App Token
       id: generate_token
       uses: actions/create-github-app-token@v2.0.2
       with:
-          app_id: ${{ inputs.app_id }}
-          private_key: ${{ inputs.app_private_key }}
+          app-id: ${{ inputs.app_id }}
+          private-key: ${{ inputs.app_private_key }}
 
     - name: Run controller logic
       run: |
