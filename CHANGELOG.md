@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.20.0](https://github.com/BenFielder/github-actions-controller/compare/v1.19.0...v1.20.0) (2025-11-08)
+
+
+### Features
+
+* move logic to generate token to earlier step ([ad15502](https://github.com/BenFielder/github-actions-controller/commit/ad15502612037964e547b2b7144cfcc3c71911fc))
+
 ## [1.19.0](https://github.com/BenFielder/github-actions-controller/compare/v1.18.0...v1.19.0) (2025-11-08)
 
 
